@@ -3,18 +3,6 @@
 #include <cctype>
 using namespace std;
 
-void print_matrix(bool **matrix,size_t m, size_t n)
-{
-    for(size_t i=0;i<m;i++)
-    {
-        for(size_t j=0;j<n;j++)
-        {
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-}
-
 struct dfa_state
 {
     bool kleene = false;
@@ -31,12 +19,12 @@ dfa_state::dfa_state(const char symbol) :
 
 }
 
-
-
 void regex_to_dfa(const char *expression, const size_t expression_length)
 {
     dfa_state adj_list[expression_length];
-    
+    size_t adj_list_size = 0;
+	
+	
     for(size_t i = 0; i < expression_length-1; i++)
     {
 		
@@ -52,7 +40,7 @@ void regex_to_dfa(const char *expression, const size_t expression_length)
 			{
 				
 			}
-        
+			
 		}
 		
     }
