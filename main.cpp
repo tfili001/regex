@@ -16,7 +16,7 @@ struct dfa_state
 dfa_state::dfa_state(const char symbol) :
     transition_symbol(symbol)
 {
-
+	//test
 }
 
 void regex_to_dfa(const char *expression, const size_t expression_length)
